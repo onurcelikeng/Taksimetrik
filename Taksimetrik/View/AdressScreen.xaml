@@ -1,0 +1,105 @@
+﻿<Page
+    x:Class="Taksimetrik.View.AdressScreen"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Taksimetrik.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <EntranceNavigationTransitionInfo/>
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+
+    <Grid Background="#f2b504">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.9"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#f2b504">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1">
+                <TextBlock Text="Adreslerim" FontFamily="Calibri" Foreground="Black" FontSize="17" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Row="1" Background="Black">
+
+        </Grid>
+
+        <Grid Grid.Row="3">
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                <AppBarButton x:Name="addButton" Margin="0,-2,0,0" Icon="Add" Foreground="Black" VerticalAlignment="Center" Click="addButton_Click"/>
+
+            </StackPanel>
+
+        </Grid>
+
+        <Grid Grid.Row="2" Background="White">
+
+            <ListView x:Name="list" SelectionChanged="list_SelectionChanged" Margin="0,0,0,0">
+
+                <ListView.Resources>
+                    <DataTemplate x:Key="myCell">
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0">
+                                <Image Source="ms-appx:///Assets/person.png"  Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" />
+                            </Grid>
+
+                            <Grid Grid.Column="1" Margin="0,10,0,0">
+
+                                <StackPanel>
+                                    <TextBlock FontSize="18" Text="{Binding Defination}" Foreground="Black" FontFamily="Calibri" FontWeight="Light" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                    <TextBlock FontSize="12" Text="{Binding Latitute}" Foreground="Black" FontFamily="Calibri" FontWeight="Light" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                    <TextBlock FontSize="12" Text="{Binding Longitude}" Foreground="Black" FontFamily="Calibri" FontWeight="Light" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                </StackPanel>
+
+                            </Grid>
+
+                        </Grid>
+                    </DataTemplate>
+                </ListView.Resources>
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+
+                <ListView.ItemTemplate>
+                    <StaticResource ResourceKey="myCell"/>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </Grid>
+
+    </Grid>
+
+</Page>

@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="Taksimetrik.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Taksimetrik"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#DB8F07">
+
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <EntranceNavigationTransitionInfo/>
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+
+    <Grid Background="#DB8F07">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.75*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" Background="#f2b504">
+
+            <Frame x:Name="iframe"/>
+
+        </Grid>
+
+        <Grid Grid.Row="0" Background="#DB8F07">
+            <Image Grid.Column="0" Source="ms-appx:///Assets/header.png" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2" />
+        </Grid>
+
+    </Grid>
+
+</Page>

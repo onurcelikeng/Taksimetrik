@@ -1,0 +1,67 @@
+﻿<Page
+    x:Class="Taksimetrik.ModelView.AddPerson"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Taksimetrik.ModelView"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <EntranceNavigationTransitionInfo/>
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+
+    <Grid Background="#f2b504">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.9"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#f2b504">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1">
+                <TextBlock Text="Taksici Ekle" FontFamily="Calibri" Foreground="Black" FontSize="16" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Row="1" Background="Black">
+
+        </Grid>
+
+        <Grid Grid.Row="3">
+
+            <AppBarButton x:Name="saveButton" Margin="0,-2,0,0" Icon="Save" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Click="saveButton_Click"/>
+
+        </Grid>
+        
+        <Grid Grid.Row="2" Background="White">
+
+            <StackPanel Margin="10">
+
+                <TextBox x:Name="name" Header="İsim" BorderBrush="#f2b504"/>
+
+                <TextBox x:Name="phone" Header="Telefon" BorderBrush="#f2b504" Margin="0,10,0,0"/>
+
+            </StackPanel>
+            
+        </Grid>
+
+    </Grid>
+
+</Page>

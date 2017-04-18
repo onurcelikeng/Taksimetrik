@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="Taksimetrik.View.PriceScreen"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Taksimetrik.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:map="using:Windows.UI.Xaml.Controls.Maps"
+    mc:Ignorable="d">
+
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <EntranceNavigationTransitionInfo/>
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+
+    <Grid Background="#f2b504">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.9"/>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1">
+                <TextBlock Text="Taksi Ücreti" FontFamily="Calibri" Foreground="Black" FontSize="17" FontWeight="Normal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Row="1" Background="Black">
+
+        </Grid>
+
+        <Grid Grid.Row="3">
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                <AppBarButton x:Name="targetButton" Tag="Konumu Bul" Margin="0,-2,0,0" Icon="Target" Foreground="Black" VerticalAlignment="Center" Click="targetButton_Click"/>
+
+                <AppBarButton x:Name="calculateButton" Tag="Hesapla" Margin="0,-2,0,0" Icon="Calculator" Foreground="Black" VerticalAlignment="Center" Click="calculateButton_Click"/>
+
+                <CommandBar x:Name="hamburgerButton" Margin="0,-2,0,-5" Background="#f2b504" Foreground="Black" VerticalAlignment="Center">
+                    <CommandBar.SecondaryCommands>
+                        <AppBarButton Name="singleClearScreen" Label="Seçimi Temizle" Click="singleClearScreen_Click"/>
+                        <AppBarButton Name="allClearScreen" Label="Haritayı Temizle" Click="allClearScreen_Click"/>
+                    </CommandBar.SecondaryCommands>
+                </CommandBar>
+
+            </StackPanel>
+            
+        </Grid>
+        
+        <Grid Grid.Row="2">
+
+            <map:MapControl x:Name="map" MapTapped="map_MapTapped" MapServiceToken="uEDRsJORPcFe1ccwk1Pq~jmkvmxvv5Qee9nP8MuQ2hw~AjWKHUTEbQF0EYDeS04jbr52SyzV465d_DHsay46QPDrc5561r8hE_fGboE3Esj8"/>
+
+            <ProgressBar x:Name="progress" Height="30" Background="Transparent" Foreground="Black" VerticalAlignment="Center" />
+
+        </Grid>
+
+    </Grid>
+
+</Page>
